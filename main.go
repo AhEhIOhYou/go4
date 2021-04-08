@@ -52,7 +52,7 @@ func Task3(text string) {
 }
 
 func main() {
-	bufFileData, e := ioutil.ReadFile("f.txt")
+	bufFileData, e := ioutil.ReadFile("source")
 	refString := string(bufFileData)
 	if e != nil {
 		fmt.Println("ouf, something happend: ", e)
