@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"regexp"
 	"strconv"
@@ -50,16 +51,12 @@ func Task3(text string) {
 	fmt.Print("Replace count: ", count, "\n", text)
 }
 
-const refString = `da aga te, big teeee. s \
-50ymdsjfkdsfkhdz
-AAAHAHAHAHAH
-uWu zlllllz
-2200
-
-zy900yx  xlkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkx xxxxxxxxxxxxxxx
-    Yux`
-
 func main() {
+	bufFileData, e := ioutil.ReadFile("f.txt")
+	refString := string(bufFileData)
+	if e != nil {
+		fmt.Println("ouf, something happend: ", e)
+	}
 	Task1(refString)
 	Task2(refString)
 	Task3(refString)
